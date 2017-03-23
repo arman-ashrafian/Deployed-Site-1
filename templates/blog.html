@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+
+{% block homeActive %}{% endblock %}
+{% block blogActive %}class="active"{% endblock %}
+
+{% block page_name %} Blog {% endblock %}
+
+{% block page_content %}
+
+{% for post in blogs %}
+<div class="well">
+    {% if logged_in %}
+    <div class="row">
+        <div class="col-md-*" style="float:right;">
+            <form id="deletebutton" action="/delete_post/{{post.id}}" method="POST">
+                <p><button type="submit" class="btn btn-danger">
+                    Delete
+                </button></p>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+      <div class="col-md-*">
+          <p>Date: {{ post.date }}</p>
+          <p>{{ post.post }}</p>
+      </div>
+    </div>
+</div>
+{% endfor %}
+
+{% if logged_in %}
+<form action="/newpost" name="form" method="POST">
+    <h4 style="color:white">New Post (1000 characters)</h4>
+    <textarea class="form-control" rows="10" name="newpost"></textarea>
+    <br>
+    <input type="submit" class="btn btn-primary" value="Post">
+</form>
+
+{% if empty_post %}
+<br>
+<div id="no_post">No Post</div>
+
+{% endif %}
+{% endif %}
+<br>
+
+{% endblock %}
