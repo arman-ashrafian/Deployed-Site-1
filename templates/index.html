@@ -10,113 +10,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- Delete post alert -->
-    <script type="text/javascript" src="/static/delete_post.js"></script>
-
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="/static/myCSS.css"
+    <link rel="stylesheet" type="text/css" href="../static/myCSS.css"
 
     <!-- Oswald Font font-family: 'Oswald', sans-serif; -->
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row content">
-            <div class="col-sm-3 sidenav">
-                <h1 id="navName">Arman Ashrafian</h1>
-                <ul class="nav nav-pills nav-stacked">
-                    <li {% block homeActive %}class="active" {% endblock %}>
-                        <a href="/">
-                            <h4>Home</h4>
-                        </a>
-                    </li>
-                    <li {% block blogActive %}{% endblock %}>
-                        <a href="/blog">
-                            <h4>Blog</h4>
-                        </a>
-                    </li>
-                    <li {% block projectsActive %}{% endblock %}>
-                        <a href="/projects">
-                            <h4>Projects</h4>
-                        </a>
-                    </li>
-                </ul><br>
-            </div>
-
-            <div class="col-sm-9">
-
-                {% if not logged_in %}
-                <a href="/login" style="float: right;font-size:20px;">Login</a>
-                {% endif %}
-
-                {% if logged_in %}
-                <a href="/logout" style="float: right;font-size:20px;">Logout</a>
-                {% endif %}
-
-                <h2 style="color:black; text-align:center;">
-                    {% block page_name %} Home {% endblock %}
-                </h2>
-                <hr>
-{% block page_content %}
-
-                <!-- Weather -->
-                <div class="row content">
-                    <!-- Left Section (icon & temp) -->
-                    <div class="col-sm-6">
-                        <div class="weather">
-                            <h1>Weather</h1>
-                            <p>San Juan Capistrano, CA</p>
-
-                            <div class="row content">
-                                <div class="col-sm-6">
-                                    <img class="img-responsive" height=100px width=100px src={{ weather_icon }}>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h1 style="padding-right:5em;font-size:50px;">{{ current_temp }}&deg</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Right Section (stats) -->
-                    <div class="col-sm-6 weather">
-                        <!-- Max Temp -->
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h3>Max Temp:</h3>
-                            </div>
-                            <div class="col-sm-6">
-                                <h3>{{ max_temp }}&deg</h3>
-                            </div>
-                        </div>
-                        <!-- Min Temp -->
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h3>Min Temp:</h3>
-                            </div>
-                            <div class="col-sm-6">
-                                <h3>{{ min_temp }}&deg</h3>
-                            </div>
-                        </div>
-                        <!-- Humidity -->
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h3>Humidity:</h3>
-                            </div>
-                            <div class="col-sm-6">
-                                <h3>{{ humidity }}%</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-{% endblock %}
-        </div>
-    </div>
+    <h1>HELLO</h1>
 </body>
-
-<footer class="container-fluid">
-    <p>Arman Ashrafian</p>
-</footer>
 
 </html>
