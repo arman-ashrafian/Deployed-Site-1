@@ -29,6 +29,7 @@
     subButton.click(function() {
         console.log(input.val());
         $.post('/new', {text: input.val()});
+	input.val('');
     });
 
 </script>

@@ -1,7 +1,7 @@
 
 # Server
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 import datetime
 
@@ -33,7 +33,7 @@ def new():
             db.session.add(dbEntery)
             db.session.commit()
 
-    return render_template('index.html')
+    return redirect(url_for('index'))
 
 # Get Today
 # returns formatted date as a string
