@@ -23,14 +23,17 @@
 </body>
 
 <script>
+
+/* JQuery */
+$(function() {
     const input = $("#input");
     const subButton = $("#submitButton");
 
-    subButton.click(function() {
+    subButton.on('click touchstart',function() {
         $.post('/new', {text: input.val()});
-        /* clear input */
-	    input.val('');
+        input.val(''); /* clear input */
     });
+})
 
 </script>
 
